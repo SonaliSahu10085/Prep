@@ -1,16 +1,14 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import Signup from './pages/Signup'
-import Login from './pages/Login'
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import CreateAccount from "./pages/createAccount";
+import StartInterview from "./pages/startInterview";
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/account" element={<CreateAccount />} />
+        <Route path="/interview" element={<StartInterview />} />
       </Routes>
     </BrowserRouter>
   )
