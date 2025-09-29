@@ -2,6 +2,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import CreateAccount from "./pages/CreateAccount";
 import StartInterview from "./pages/StartInterview";
 
+// something is breaking in this app.tsx
 function App() {
 
   return (
