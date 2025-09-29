@@ -57,9 +57,9 @@ const studentLogin = async (req, res) => {
         }
         
         // Create JWT token
-        const token = jwt.sign({ id: student._id }, process.env.JWT_SECRET, { expiresIn: "1h" });
+        const token = jwt.sign({ id: student._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
     
-        res.status(200).json({ message: "Login successful", token, student });
+        res.status(200).json({ message: "Login successful", student, Token: token });
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
