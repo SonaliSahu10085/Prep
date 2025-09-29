@@ -30,9 +30,7 @@ const studentSchema = new mongoose.Schema({
         required: [true, 'Password is required'],
         minlength: [6, 'Password must be at least 6 characters long']
     },
-    // Adds createdAt and updatedAt fields
-    timestamps: true
-});
+}, { timestamps: true });
 
 const Student = mongoose.model('Student', studentSchema);
 
