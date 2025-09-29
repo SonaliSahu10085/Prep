@@ -1,6 +1,6 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import CreateAccount from "./pages/createAccount";
-import StartInterview from "./pages/startInterview";
+import CreateAccount from "./pages/CreateAccount";
+import StartInterview from "./pages/StartInterview";
 
 function App() {
 
