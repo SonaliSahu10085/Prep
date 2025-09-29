@@ -1,4 +1,3 @@
-// import { Button } from "@/components/ui/button"
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import CreateAccount from "./pages/createAccount";
 import StartInterview from "./pages/startInterview";
