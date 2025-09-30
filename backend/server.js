@@ -5,9 +5,8 @@ const connectDB = require("./config/db");
 const studentRouter = require("./routes/studentRoute");
 
 connectDB();
-
 const app = express();
-gi
+
 app.use(cors());
 app.use(express.json());
 
