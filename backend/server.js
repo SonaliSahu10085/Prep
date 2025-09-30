@@ -8,6 +8,7 @@ const { errorHandling } = require("./middlewares/errorHandling");
 
 connectDB();
 const app = express();
+const PORT = process.env.PORT || 6000;
 
 app.use(cors());
 app.use(express.json());
@@ -17,6 +18,6 @@ app.use("/student", studentRouter);
 app.use(notFound);
 app.use(errorHandling);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log("Server is running on port 3000");
 });
