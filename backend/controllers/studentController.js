@@ -65,4 +65,21 @@ const studentLogin = async (req, res) => {
     }
 }
 
-module.exports = { studentSignUp, studentLogin };
+const getStudentProfile = async (req, res) => {
+    try {
+
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+const updateStudentProfile = async (req, res) => {
+    try {
+        
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
+
+module.exports = { studentSignUp, studentLogin, getStudentProfile, updateStudentProfile };
