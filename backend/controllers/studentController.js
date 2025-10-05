@@ -2,6 +2,7 @@ const Student = require("../models/studentModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
+// Student signup
 const studentSignUp = async (req, res) => {
     try {
         const { fullName, username, email, password } = req.body;
@@ -33,6 +34,7 @@ const studentSignUp = async (req, res) => {
     }
 };
 
+// Student login
 const studentLogin = async (req, res) => {
     try {
         const { email, password } = req.body;
@@ -65,16 +67,37 @@ const studentLogin = async (req, res) => {
     }
 }
 
+// Get student profile
 const getStudentProfile = async (req, res) => {
     try {
+        const student = req.student;
+        
+        if (!student) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        const studentDetails = await Student.findById(student.id);
+        res.status(200).json({message : "Profile fetched successfully", student : studentDetails });
 
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 }
 
+// Update student profile
 const updateStudentProfile = async (req, res) => {
     try {
+        const student = req.student;
+        if (!student) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        if(!req.body) {
+            return res.status(400).json({ error: "No data provided to update" });
+        }
+
+        const updatedStudent = await Student.findByIdAndUpdate(student.id, req.body, { new: true });
+        res.status(200).json({message : "Profile updated successfully", student : updatedStudent });
         
     } catch (error) {
         res.status(500).json({ error: error.message });
