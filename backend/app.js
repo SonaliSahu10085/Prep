@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
-const studentRouter = require("./routes/studentRoute");
+const studentRouter = require("./routes/studentRoutes");
 const { notFound } = require("./middlewares/notFound");
 const { errorHandling } = require("./middlewares/errorHandling");
 const morgan = require("morgan");
