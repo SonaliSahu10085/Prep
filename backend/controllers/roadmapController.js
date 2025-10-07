@@ -57,7 +57,19 @@ const createRoadmap = async (req, res) => {
 // Update roadmap
 const updateRoadmap = async (req, res) => {
     try {
-        
+        const { id } = req.params;
+        if (!id) {
+            return res.status(400).json({ message: "Id is required" });
+        }
+
+        const roadmap = await Roadmap.findById(id);
+
+        if (!roadmap) {
+            return res.status(404).json({ message: "Roadmap not found" });
+        }
+
+        const updatedRoadmap = await Roadmap.findByIdAndUpdate(id, req.body, { new: true });
+        res.status(200).json({ message: "Roadmap updated successfully", roadmap: updatedRoadmap });
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
