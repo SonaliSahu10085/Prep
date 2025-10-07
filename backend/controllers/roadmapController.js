@@ -3,7 +3,7 @@ const Roadmap = require("../models/roadmapModel");
 // Get all roadmaps
 const getAllRoadmaps = async (req, res) => {
     try {
-        const roadmaps = await Roadmap.find({});
+        const roadmaps = await Roadmap.find({}).populate("resources");
 
         if (!roadmaps) {
             return res.status(404).json({ message: "No roadmaps found" });
@@ -18,7 +18,19 @@ const getAllRoadmaps = async (req, res) => {
 // Get roadmap by year
 const getRoadmapByYear = async (req, res) => {
     try {
-        
+        const { year } = req.params;
+
+        if (!year) {
+            return res.status(400).json({ message: "Year is required" });
+        }
+
+        const roadmap = await Roadmap.findOne({ year }).populate("resources");
+
+        if (!roadmap) {
+            return res.status(404).json({ message: "Roadmap not found" });
+        }
+
+        res.status(200).json({ message: "Roadmap fetched successfully", roadmap });
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
