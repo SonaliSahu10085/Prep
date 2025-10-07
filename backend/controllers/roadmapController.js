@@ -24,9 +24,11 @@ const getRoadmapByYear = async (req, res) => {
             return res.status(400).json({ message: "Year is required" });
         }
 
+        // Find roadmap
         const roadmap = await Roadmap.findOne({ year }).populate("resources");
 
-        if (!roadmap) {
+        // Check if roadmap exists
+        if (!roadmap || roadmap.length === 0) {
             return res.status(404).json({ message: "Roadmap not found" });
         }
 
@@ -39,7 +41,14 @@ const getRoadmapByYear = async (req, res) => {
 // Create roadmap
 const createRoadmap = async (req, res) => {
     try {
-        
+        const { title, year, description, resources } = req.body;
+
+        if (!title || !year || !resources) {
+            return res.status(400).json({ message: "All fields are required" });
+        }
+
+        const roadmap = await Roadmap.create({ title, year, description, resources });
+        res.status(201).json({ message: "Roadmap created successfully", roadmap });
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
