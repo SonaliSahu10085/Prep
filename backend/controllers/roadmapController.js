@@ -57,7 +57,19 @@ const createRoadmap = async (req, res) => {
 // Update roadmap
 const updateRoadmap = async (req, res) => {
     try {
-        
+        const { id } = req.params;
+        if (!id) {
+            return res.status(400).json({ message: "Id is required" });
+        }
+
+        const roadmap = await Roadmap.findById(id);
+
+        if (!roadmap) {
+            return res.status(404).json({ message: "Roadmap not found" });
+        }
+
+        const updatedRoadmap = await Roadmap.findByIdAndUpdate(id, req.body, { new: true });
+        res.status(200).json({ message: "Roadmap updated successfully", roadmap: updatedRoadmap });
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
@@ -66,7 +78,19 @@ const updateRoadmap = async (req, res) => {
 // Delete roadmap
 const deleteRoadmap = async (req, res) => {
     try {
-        
+        const { id } = req.params;
+
+        if (!id) {
+            return res.status(400).json({ message: "Id is required" });
+        }
+
+        const deletedRoadmap = await Roadmap.findByIdAndDelete(id);
+
+        if (!deletedRoadmap) {
+            return res.status(404).json({ message: "Roadmap not found" });
+        }
+
+        res.status(200).json({ message: "Roadmap deleted successfully", roadmap: deletedRoadmap });
     } catch (error) {
         res.status(400).json({ message: error.message });
     }
