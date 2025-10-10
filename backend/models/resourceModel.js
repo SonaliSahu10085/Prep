@@ -4,13 +4,13 @@ const resourceSchema = new mongoose.Schema(
   {
     title: {
       type: String,
-      required: true, // e.g., "HTML Notes", "JavaScript Practice Set"
+      required: [true, "Title is required"], // e.g., "HTML Notes", "JavaScript Practice Set"
       trim: true,
     },
     type: {
       type: String,
       enum: ["note", "link", "video", "practice"], // resource type
-      required: true,
+      required: [true, "Type is required"],
     },
     url: {
       type: String,
@@ -24,13 +24,13 @@ const resourceSchema = new mongoose.Schema(
     },
     topic: {
       type: String,
-      required: true, // e.g., "Web Development", "DSA", "Database"
+      required: [true, "Topic is required"], // e.g., "Web Development", "DSA", "Database"
       trim: true,
     },
     year: {
       type: Number,
       enum: [1, 2, 3],
-      required: true, // BCA year (1st, 2nd, 3rd)
+      required: [true, "Year is required"], // BCA year (1st, 2nd, 3rd)
     },
     file: {
       type: String, // optional: if PDF uploaded, store file path
