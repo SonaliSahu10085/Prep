@@ -24,4 +24,17 @@ const authVerify = async (req, res, next) => {
     }
 };
 
-module.exports = authVerify;
+// Middleware to check if user is admin
+const adminVerify = async (req, res, next) => {
+    try {
+        const { role } = req.student;
+        if (role !== "admin") {
+            return res.status(401).json({ message: "Not authorized" });
+        }
+        next();
+    } catch (error) {
+        res.status(401).json({ message: "Not authorized" });
+    }
+};
+
+module.exports = { authVerify, adminVerify };
