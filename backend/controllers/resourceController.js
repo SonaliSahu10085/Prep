@@ -44,8 +44,13 @@ const getResourceByTopic = async (req, res) => {
 const createResource = async (req, res) => {
     try {
         const { title, type, url, description, topic, year, file } = req.body;
-        if( !title || !type || !url || !topic || !year ) {
+        if (!title || !type || !url || !topic || !year) {
             return res.status(400).json({ message: "All fields are required" });
+        }
+
+        // URL check only for non-note resources
+        if (type !== "note" && !url) {
+            return res.status(400).json({ message: "URL is required for non-note resources" });
         }
 
         const newResource = new Resource({
@@ -61,10 +66,7 @@ const createResource = async (req, res) => {
 
         await newResource.save();
 
-        res.status(201).json({
-            message: "Resource created successfully",
-            data: newResource,
-        });
+        res.status(201).json({ message: "Resource created successfully", data: newResource});
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
