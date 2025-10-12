@@ -8,7 +8,7 @@ const getAllResources = async (req, res) => {
             return res.status(404).json({ message: "No resources found" });
         }
 
-        res.status(200).json({message : "Resources fetched successfully", resources : resources});
+        res.status(200).json({ message: "Resources fetched successfully", count: resources.length, resources: resources });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -18,6 +18,22 @@ const getAllResources = async (req, res) => {
 // Get resource by topic
 const getResourceByTopic = async (req, res) => {
     try {
+        const { topic } = req.params;
+        if (!topic) {
+            return res.status(400).json({ message: "Topic is required" });
+        }
+
+        const resources = await Resource.find({
+            topic: { $regex: topic, $options: "i" }, // case-insensitive match
+        });
+
+        if (!resources || resources.length === 0) {
+            return res
+                .status(404)
+                .json({ message: "No resources found for this topic" });
+        }
+
+        res.status(200).json({ message: "Resource fetched successfully", count: resources.length, resource: resources });
 
     } catch (error) {
         res.status(500).json({ message: error.message });
@@ -27,7 +43,28 @@ const getResourceByTopic = async (req, res) => {
 // Create resource
 const createResource = async (req, res) => {
     try {
-        
+        const { title, type, url, description, topic, year, file } = req.body;
+        if( !title || !type || !url || !topic || !year ) {
+            return res.status(400).json({ message: "All fields are required" });
+        }
+
+        const newResource = new Resource({
+            title,
+            type,
+            url,
+            description,
+            topic,
+            year,
+            file,
+            addedBy: req.user ? req.user.id : null, // from auth middleware if available
+        });
+
+        await newResource.save();
+
+        res.status(201).json({
+            message: "Resource created successfully",
+            data: newResource,
+        });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -36,7 +73,7 @@ const createResource = async (req, res) => {
 // Update resource
 const updateResource = async (req, res) => {
     try {
-        
+
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -45,7 +82,7 @@ const updateResource = async (req, res) => {
 // Delete resource
 const deleteResource = async (req, res) => {
     try {
-        
+
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
