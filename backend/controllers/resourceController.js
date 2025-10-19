@@ -75,7 +75,18 @@ const createResource = async (req, res) => {
 // Update resource
 const updateResource = async (req, res) => {
     try {
+        const { id } = req.params;
+        if (!id) {
+            return res.status(400).json({ message: "Resource ID is required" });
+        }
 
+        if (!req.body) {
+            return res.status(400).json({ message: "No data provided to update" });
+        }
+
+        const updatedResource = await Resource.findByIdAndUpdate(id, req.body, { new: true });
+        res.status(200).json({ message: "Resource updated successfully", resource: updatedResource });
+        
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
