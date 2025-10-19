@@ -95,7 +95,17 @@ const updateResource = async (req, res) => {
 // Delete resource
 const deleteResource = async (req, res) => {
     try {
+        const { id } = req.params;
+        if (!id) {
+            return res.status(400).json({ message: "Resource ID is required" });
+        }
 
+        const deletedResource = await Resource.findByIdAndDelete(id);
+        if (!deletedResource) {
+            return res.status(404).json({ message: "Resource not found for deleted" });
+        }
+
+        res.status(200).json({ message: "Resource deleted successfully", resource: deletedResource });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
