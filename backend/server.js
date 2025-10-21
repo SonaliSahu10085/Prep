@@ -1,18 +1,5 @@
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
-const connectDB = require("./config/db");
-const studentRouter = require("./routes/studentRoute");
+require('dotenv').config();
+const app = require('./app');
 
-connectDB();
-
-const app = express();
-gi
-app.use(cors());
-app.use(express.json());
-
-app.use("/student", studentRouter);
-
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
