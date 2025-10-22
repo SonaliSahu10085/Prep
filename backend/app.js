@@ -19,7 +19,7 @@ app.use(morgan("dev"));
 
 // routes
 app.use("/student", studentRouter);
-// app.use("/roadmap", roadmapRouter);
+app.use("/roadmap", roadmapRouter);
 app.use("/resource", resourceRouter);
 
 // error handling middleware
