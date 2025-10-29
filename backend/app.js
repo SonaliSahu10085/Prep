@@ -18,9 +18,9 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // routes
-app.use("/student", studentRouter);
-app.use("/roadmap", roadmapRouter);
-app.use("/resource", resourceRouter);
+app.use("/students", studentRouter);
+app.use("/roadmaps", roadmapRouter);
+app.use("/resources", resourceRouter);
 
 // error handling middleware
 app.use(notFound);
