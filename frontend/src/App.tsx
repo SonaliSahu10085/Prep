@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage, Login, Signup, AdminLogin } from "./pages/index.ts";
+import { Auth, Home } from "./pages/index.ts";
 import "./index.css"
-import {images} from "./public/images.ts";
+import { images } from "./assets/images.ts";
 
 function App() {
 
@@ -9,10 +9,10 @@ function App() {
     <BrowserRouter>
       <div style={{ backgroundImage: `url(${images.lightMode.bgImage})` }} className="min-h-screen bg-cover">
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Auth type="login" />} />
+          <Route path="/signup" element={<Auth type="signup" />} />
+          <Route path="/admin/login" element={<Auth type="admin" />} />
         </Routes>
       </div>
     </BrowserRouter>
