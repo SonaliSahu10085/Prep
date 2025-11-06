@@ -23,6 +23,8 @@ const getResourceByTopic = async (req, res) => {
             return res.status(400).json({ message: "Topic is required" });
         }
 
+        console.log(topic);
+
         const resources = await Resource.find({
             topic: { $regex: topic, $options: "i" }, // case-insensitive match
         });
@@ -44,7 +46,7 @@ const getResourceByTopic = async (req, res) => {
 const createResource = async (req, res) => {
     try {
         const { title, type, url, description, topic, year, file } = req.body;
-        if (!title || !type || !url || !topic || !year) {
+        if (!title || !type || !topic || !year) {
             return res.status(400).json({ message: "All fields are required" });
         }
 
