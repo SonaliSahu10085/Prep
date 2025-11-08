@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Auth, Home } from "./pages/index.ts";
 import "./index.css"
-import { images } from "./assets/images.ts";
+import { images } from "./constants/images.ts";
 
 function App() {
 

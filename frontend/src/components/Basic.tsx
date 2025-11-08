@@ -1,3 +1,11 @@
+function Loading() {
+  return (
+    <div className="bg-transparent flex items-center justify-center">
+      <span className="loading loading-spinner loading-xl"></span>
+    </div>
+  )
+}
+
 // OR Component
 function ORWithLinesBothSide() {
   return (
@@ -47,11 +55,10 @@ function Button({ Icon, alignIcon, label }: ButtonProps) {
   return (
     <button
       type="submit"
-      className={`flex ${
-        alignIcon === "left"
-          ? "flex-row-reverse border-2 bg-[rgb(129,193,205,0.18)] text-[#417A8F]"
-          : "border text-white bg-[rgb(62,107,123)]"
-      } justify-center items-center w-full  py-2 rounded-md gap-2 my-3 font-medium border-[rgb(129,193,205)]`}
+      className={`flex ${alignIcon === "left"
+        ? "flex-row-reverse border-2 bg-[rgb(129,193,205,0.18)] text-[#417A8F]"
+        : "border text-white bg-[rgb(62,107,123)]"
+        } justify-center items-center w-full  py-2 rounded-md gap-2 my-3 font-medium border-[rgb(129,193,205)]`}
     >
       <span>{label}</span>
       {Icon && <Icon {...({ className: "text-xl" } as any)} />}
@@ -78,4 +85,4 @@ function Paragraph({ text, highlightedText }: ParagraphProp) {
   );
 }
 
-export { ORWithLinesBothSide, InputField, Button, Paragraph };
+export { Loading, ORWithLinesBothSide, InputField, Button, Paragraph };

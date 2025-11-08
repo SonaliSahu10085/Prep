@@ -1,4 +1,4 @@
-import { images } from "../assets/images.ts";
+import { images } from "../constants/images.ts";
 import { Form } from "../components/index.ts";
 
 export default function Auth({ type }: { type: "admin" | "login" | "signup" }) {
