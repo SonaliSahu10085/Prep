@@ -5,7 +5,7 @@ export default function Auth({ type }: { type: "admin" | "login" | "signup" }) {
 
     return (<div className="grid grid-cols-12 sm:mx-20">
         <div className="hidden sm:flex sm:col-span-7 items-center h-screen">
-            <img src={type === "admin" ? images.lightMode.adminLogin : images.default.heroSection}
+            <img src={type === "admin" ? images.light.adminLogin : images.default.heroSection}
                 alt="Admin Portal"
                 className="h-4/5" />
         </div>
