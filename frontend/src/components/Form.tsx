@@ -1,14 +1,11 @@
-import { images } from "../assets/images";
+import { images } from "../constants/images";
 import {
   Mail,
-  CheckmarkCircle,
-  LockOpen,
   LockClose,
-  EyeOpen,
   EyeClose,
   Google,
   User,
-} from "../assets/icons";
+} from "../constants/icons";
 
 import {
   ORWithLinesBothSide,
@@ -27,7 +24,7 @@ export default function Form({ type }: FormProps) {
       <img src={images.default.logo} alt="logo" className="h-16 mb-4 mx-auto" />
 
       {type === "admin" && (
-        <h1 className="mt-8 text-2xl text-[#417A8F] text-center abril-fatface">
+        <h1 className="mt-8 text-2xl text-[#417A8F] text-center font-family-abril-fatface">
           Welcome To Admin
           <br />
           Portal

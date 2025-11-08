@@ -3,7 +3,7 @@
 
 /* 2️⃣ Import Tailwind (v4 merges all layers automatically) */
 @import "tailwindcss";
-
+@plugin "daisyui";
 
 
 /* 3️⃣ Optional: Animation or plugin imports */
@@ -24,9 +24,41 @@ body {
   color: #656565;
 }
 
-.abril-fatface{
+.font-family-abril-fatface{
   font-family: "Abril Fatface", serif;
+  letter-spacing: 1px;
 }
+
+.text-primary {
+  color: #417A8F
+}
+
+.text-secondary {
+  color: #3E6B7B
+}
+
+.text-secondary-50{
+  color: #81C1CD;
+}
+
+
+.text-secondary-75{
+  color: #84A4B0;
+}
+
+.text-tertiary {
+  color: #FB452B
+}
+
+.text-tertiary-75 {
+  color: #FB8573
+}
+
+.text-gray-75 {
+  color: #7C7C7C
+}
+
+
 
 /* Custom components */
 @import "./styles/components.css"
