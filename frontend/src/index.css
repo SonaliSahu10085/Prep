@@ -58,6 +58,9 @@ body {
   color: #7C7C7C
 }
 
+.bg-gradient {
+  background-image: linear-gradient(to right, #3E6B7B, #71C4E1);
+}
 
 
 /* Custom components */

@@ -32,7 +32,7 @@ export default function Navbar() {
     }
 
     return (
-        <div className={`backdrop-blur-sm border border-transparent sticky top-0 ${theme === "light" ? "bg-white/10" : "bg-black/10"} mx-4 sm:mx-20 rounded-b-3xl`}>
+        <div className={`backdrop-blur-sm border border-transparent sticky top-0 ${theme === "light" ? "bg-white/20" : "bg-black/20"} mx-4 sm:mx-20 rounded-b-3xl`}>
             <nav className={`flex items-center justify-between sm:px-10 py-4 px-6 rounded-3xl shadow-md shadow-gray-500 mt-4`}>
                 <img src={images.default.logo} alt="logo" className="h-12" />
 

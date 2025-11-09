@@ -1,4 +1,4 @@
-import { Navbar, Body, HeroSection, PrepPartner } from "../components";
+import { Navbar, Body, HeroSection, PrepPartner, PlaceJourney } from "../components";
 
 
 const Home = () => {
@@ -7,6 +7,7 @@ const Home = () => {
       <Navbar />
       <HeroSection />
       <PrepPartner />
+      <PlaceJourney />
       
     </div>
   )
