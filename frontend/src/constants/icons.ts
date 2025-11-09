@@ -3,6 +3,8 @@ import { FcGoogle as Google } from "react-icons/fc";
 import { IoCheckmarkCircle as CheckmarkCircle } from "react-icons/io5";
 import { HiOutlineMenuAlt3 as Menu } from "react-icons/hi";
 import { MdOutlineLightMode as Light, MdOutlineNightlight as Dark } from "react-icons/md";
+import { FaArrowRightLong as RightArrow } from "react-icons/fa6";
+import { IoMdPlay as Play } from "react-icons/io";
 
 import {BsToggleOff as ToggleOff , BsToggleOn as ToggleOn } from "react-icons/bs";
 import {
@@ -30,5 +32,7 @@ export {
   Menu,
   Close,
   Light,
-  Dark
+  Dark,
+  RightArrow,
+  Play
 };

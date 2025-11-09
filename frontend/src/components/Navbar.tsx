@@ -11,9 +11,9 @@ function ThemeIcon() {
         {/* hidden input just for DaisyUI animation */}
         <input type="checkbox" onClick={() => setTheme(theme === "light" ? "dark" : "light")} />
 
-        <Dark className="swap-off fill-current text-4xl text-[#417A8F] bg-gray-100 rounded-full p-2 border border-gray-200" />
+        <Dark className="swap-off fill-current text-4xl text-[#417A8F] bg-gray-100 rounded-full p-2 border border-gray-300" />
 
-        <Light className="swap-on fill-current text-4xl text-[#417A8F] bg-gray-100 rounded-full p-2 border border-gray-200" />
+        <Light className="swap-on fill-current text-4xl text-[#417A8F] bg-black/10 rounded-full p-2 border border-gray-600" />
 
     </label>)
 }
@@ -32,8 +32,8 @@ export default function Navbar() {
     }
 
     return (
-        <div className="backdrop-blur-sm border border-transparent sticky top-0 bg-black/10 mx-4 sm:mx-20 rounded-b-3xl">
-            <nav className={`flex items-center justify-between ${theme === "light" ? "bg-white" : "bg-black"} sm:px-10 py-4 px-6 rounded-3xl shadow-md shadow-gray-500 mt-4`}>
+        <div className={`backdrop-blur-sm border border-transparent sticky top-0 ${theme === "light" ? "bg-white/10" : "bg-black/10"} mx-4 sm:mx-20 rounded-b-3xl`}>
+            <nav className={`flex items-center justify-between sm:px-10 py-4 px-6 rounded-3xl shadow-md shadow-gray-500 mt-4`}>
                 <img src={images.default.logo} alt="logo" className="h-12" />
 
 
