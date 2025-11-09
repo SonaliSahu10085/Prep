@@ -2,6 +2,7 @@ import { TbMailFilled as Mail } from "react-icons/tb";
 import { FcGoogle as Google } from "react-icons/fc";
 import { IoCheckmarkCircle as CheckmarkCircle } from "react-icons/io5";
 import { HiOutlineMenuAlt3 as Menu } from "react-icons/hi";
+import { MdOutlineLightMode as Light, MdOutlineNightlight as Dark } from "react-icons/md";
 
 import {BsToggleOff as ToggleOff , BsToggleOn as ToggleOn } from "react-icons/bs";
 import {
@@ -27,5 +28,7 @@ export {
   ToggleOff,
   ToggleOn,
   Menu,
-  Close
+  Close,
+  Light,
+  Dark
 };

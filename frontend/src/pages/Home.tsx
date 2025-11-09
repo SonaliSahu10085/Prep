@@ -8,6 +8,10 @@ const Home = () => {
       <HeroSection/>
       <Body />
       <Body />
+      <Body />
+      <Body />
+      <Body />
+      <Body />
     </div>
   )
 }
