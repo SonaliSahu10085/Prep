@@ -7,11 +7,11 @@ import { Link } from "react-router-dom";
 function ThemeIcon() {
     const { setTheme, theme } = useStore();
     console.log(theme);
-    return (<label className="swap swap-rotate">
+    return (<label className="swap swap-rotate" >
         {/* hidden input just for DaisyUI animation */}
         <input type="checkbox" onClick={() => setTheme(theme === "light" ? "dark" : "light")} />
 
-        <Dark className="swap-off fill-current text-4xl text-[#417A8F] bg-gray-100 rounded-full p-2 border border-gray-300" />
+        <Dark className="swap-off fill-current text-4xl text-[#417A8F] bg-white/10 rounded-full p-2 border border-gray-400 " />
 
         <Light className="swap-on fill-current text-4xl text-[#417A8F] bg-black/10 rounded-full p-2 border border-gray-600" />
 
