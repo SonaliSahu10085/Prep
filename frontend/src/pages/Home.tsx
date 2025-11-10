@@ -1,13 +1,12 @@
-import { Navbar, Body, HeroSection, PrepPartner } from "../components";
+import { Navbar, Body, HeroSection } from "../components";
 
 
 const Home = () => {
   return (
     <div>
       <Navbar />
-      <HeroSection />
-      <PrepPartner />
-      
+      <HeroSection/>
+      <Body />
     </div>
   )
 }
