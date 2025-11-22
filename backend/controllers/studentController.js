@@ -5,8 +5,8 @@ const jwt = require("jsonwebtoken");
 // Student signup
 const studentSignUp = async (req, res) => {
     try {
-        const { fullName, username, email, password } = req.body;
-        if (!fullName || !username || !email || !password) {
+        const { fullName, email, password } = req.body;
+        if (!fullName || !email || !password) {
             return res.status(400).json({ error: "All fields are required" });
         }
 
@@ -22,7 +22,6 @@ const studentSignUp = async (req, res) => {
         // Create new user
         const student = await Student.create({
             fullName,
-            username,
             email,
             password : hashedPassword,
         });
@@ -103,6 +102,5 @@ const updateStudentProfile = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 }
-
 
 module.exports = { studentSignUp, studentLogin, getStudentProfile, updateStudentProfile };
