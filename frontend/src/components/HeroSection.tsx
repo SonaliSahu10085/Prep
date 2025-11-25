@@ -43,7 +43,7 @@ export function HeroSection() {
             <img
                 src={images.default.heroSection}
                 alt="Hero Section"
-                className=" h-96 flex-1 mt-8 sm:mt-0"
+                className="h-96 flex-1 mt-8 sm:mt-0 slide-right"
             />
         </section>
     );

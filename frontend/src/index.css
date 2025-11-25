@@ -10,58 +10,24 @@
 @import "tw-animate-css";
 
 
-/* 4️⃣ Custom Variants (if needed) */
-@custom-variant dark (&:is(.dark *));
 
+@theme {
+  --text-light: #656565;
+  --text-dark: #d0d0d0;
+}
 
-/* 5️⃣ Your custom CSS */
 body {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  color: #656565;
+  color: var(--text-light);
 }
 
-.font-family-abril-fatface{
-  font-family: "Abril Fatface", serif;
-  letter-spacing: 1px;
+.dark body {
+  @apply text-gray-400;
 }
 
-.text-primary {
-  color: #417A8F
-}
-
-.text-secondary {
-  color: #3E6B7B
-}
-
-.text-secondary-50{
-  color: #81C1CD;
-}
-
-
-.text-secondary-75{
-  color: #84A4B0;
-}
-
-.text-tertiary {
-  color: #FB452B
-}
-
-.text-tertiary-75 {
-  color: #FB8573
-}
-
-.text-gray-75 {
-  color: #7C7C7C
-}
-
-.bg-gradient {
-  background-image: linear-gradient(to right, #3E6B7B, #71C4E1);
-}
-
-
-/* Custom components */
-@import "./styles/components.css"
+@import "./styles/color.css";
+@import "./styles/components.css";

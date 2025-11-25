@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Auth, Home } from "./pages/index.ts";
+import { Auth, Home , Contributors } from "./pages/index.ts";
 import "./index.css"
 import { images } from "./constants/images.ts";
 import { useStore } from "./constants/store.ts";
@@ -18,6 +18,7 @@ function App() {
           <Route path="/login" element={<Auth type="login" />} />
           <Route path="/signup" element={<Auth type="signup" />} />
           <Route path="/admin/login" element={<Auth type="admin" />} />
+          <Route path="/contributors" element={<Contributors />} />
         </Routes>
       </div>
     </BrowserRouter>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Loading() {
   return (
     <div className="bg-transparent flex items-center justify-center">
@@ -22,21 +24,30 @@ type InputFieldProps = {
   Icon1: React.ComponentType;
   Icon2?: React.ComponentType;
   placeholder: string;
+  setInputType?: (value: string) => void;
+  inputType: string;
 };
 
-function InputField({ Icon1, Icon2, placeholder }: InputFieldProps) {
+function InputField({ Icon1, Icon2, placeholder, setInputType, inputType }: InputFieldProps) {
+
+  const toggleType = () => {
+    if (setInputType) {
+      setInputType(inputType === "password" ? "text" : "password");
+    }
+  }
   return (
-    <div className="my-3 border flex items-center gap-3 px-4 py-2 bg-[rgba(217,217,217,0.38)] rounded-md border-[rgb(129,193,205)]">
-      <Icon1 {...({ className: "text-gray-600 cursor-pointer" } as any)} />
+    <div className="my-3 border flex items-center gap-3 px-4 py-2 bg-[rgba(217,217,217,0.38)] rounded-md border-[rgb(129,193,205)] dark:text-gray-50">
+      <Icon1 {...({ className: "text-gray-600 cursor-pointer dark:text-gray-50" } as any)} />
       <div className="flex flex-1 items-center justify-between">
         <input
           placeholder={placeholder}
-          type={Icon2 ? "password" : "text"}
-          className="flex-1 bg-transparent focus:outline-none text-gray-700 w-full"
+          type={inputType}
+          className="flex-1 bg-transparent focus:outline-none text-gray-700 dark:text-gray-50"
         />
         {Icon2 && (
           <Icon2
-            {...({ className: "text-gray-600 cursor-pointer ms-4" } as any)}
+            className="text-gray-600 cursor-pointer ms-4"
+            onClick={toggleType()}
           />
         )}
       </div>
@@ -71,16 +82,17 @@ function Button({ Icon, alignIcon, label }: ButtonProps) {
 type ParagraphProp = {
   text?: string | "";
   highlightedText: string;
+  redirectTo?: string;
 };
 
-function Paragraph({ text, highlightedText }: ParagraphProp) {
+function Paragraph({ text, highlightedText, redirectTo }: ParagraphProp) {
   return (
     <p className="text-center text-xs italic">
       {text}
-      <span className="text-[rgb(62,107,123)] font-medium  hover:underline cursor-pointer">
+      <Link to={redirectTo ?? "/"} className="text-[rgb(62,107,123)] font-medium  hover:underline cursor-pointer">
         {" "}
         {highlightedText}
-      </span>
+      </Link>
     </p>
   );
 }

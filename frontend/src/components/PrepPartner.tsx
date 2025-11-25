@@ -34,7 +34,7 @@ function BottomPart({
             className={`flex flex-col sm:gap-24 sm:items-center ${alignImg === "right" ? "sm:flex-row-reverse" : "sm:flex-row"
                 }`}
         >
-            <img src={img} alt="" className="h-96" />
+            <img src={img} alt="" className={`h-96 ${alignImg === 'right' ? "slide-right" : "slide-left"} duration-75`} />
             <div className="mt-6 sm:mt-0 text-center sm:text-start p-2">
                 <h3 className="text-secondary text-xl font-family-abril-fatface">
                     {h3}

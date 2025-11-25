@@ -6,6 +6,7 @@ export const images = {
     logo: `${CLOUDINARY_BASE_URL}/v1761397617/logo_ya3duz.png`,
     ajay: `${CLOUDINARY_BASE_URL}/v1762683800/ajay_jaawpk.png`,
     sonali: `${CLOUDINARY_BASE_URL}/v1762683800/sonali_vrvlk4.png`,
+    appqrcode: `${CLOUDINARY_BASE_URL}/v1763033827/qrcode_dzn7h0.png`,
   },
   light: {
     bgImage: `${CLOUDINARY_BASE_URL}/v1761397617/BG_Light_qgtgt5.png`,

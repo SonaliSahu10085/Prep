@@ -6,7 +6,12 @@ import { MdOutlineLightMode as Light, MdOutlineNightlight as Dark } from "react-
 import { FaArrowRightLong as RightArrow } from "react-icons/fa6";
 import { IoMdPlay as Play } from "react-icons/io";
 
-import {BsToggleOff as ToggleOff , BsToggleOn as ToggleOn } from "react-icons/bs";
+import { BsToggleOff as ToggleOff, BsToggleOn as ToggleOn } from "react-icons/bs";
+
+import { LuMail as OutlinedMail } from "react-icons/lu";
+
+import { RiTelegramLine as OutlinedTelegram } from "react-icons/ri";
+
 import {
   FaUnlock as LockOpen,
   FaLock as LockClose,
@@ -14,6 +19,8 @@ import {
   FaEyeSlash as EyeClose,
   FaUser as User,
   FaChevronDown as DownArrow,
+  FaLinkedin as Linkedin,
+  FaGithub as Github
 } from "react-icons/fa";
 import { CgClose as Close } from "react-icons/cg";
 
@@ -31,8 +38,12 @@ export {
   ToggleOn,
   Menu,
   Close,
+  Linkedin,
+  Github,
   Light,
   Dark,
   RightArrow,
-  Play
+  Play,
+  OutlinedMail,
+  OutlinedTelegram
 };

@@ -2,11 +2,22 @@ import { images } from "../constants/images";
 import { Menu, Close, Light, Dark } from "../constants/icons";
 import { useStore } from "../constants/store";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 
 function ThemeIcon() {
     const { setTheme, theme } = useStore();
     console.log(theme);
+
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [theme])
+
+
     return (<label className="swap swap-rotate" >
         {/* hidden input just for DaisyUI animation */}
         <input type="checkbox" onClick={() => setTheme(theme === "light" ? "dark" : "light")} />
