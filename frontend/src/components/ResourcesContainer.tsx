@@ -19,7 +19,7 @@ function ResourceCard({ icon, img, h4, p }: {
 
             {/* Description Part  */}
             <div className="p-2 bg-">
-                <h4 className="text-primary ">{h4}</h4>
+                <h4 className="text-brand-gradient ">{h4}</h4>
                 <p>{p}</p>
             </div>
         </div>
@@ -30,7 +30,7 @@ export default function ResourcesContainer() {
     return (
         <section className="mx-4 sm:mx-20 border">
             {/* Heading  */}
-            <h2 className="text-secondary text-4xl font-family-abril-fatface leading-12 text-center">
+            <h2 className="text-brand-gradient text-4xl font-family-abril-fatface leading-12 text-center">
                 Everything you need to ace your interview
             </h2>
 

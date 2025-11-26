@@ -23,11 +23,36 @@ body {
   font-weight: 400;
   font-style: normal;
   color: var(--text-light);
+  overflow-x: hidden;
 }
 
 .dark body {
   @apply text-gray-400;
 }
+
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.after\:animate-blink::after {
+  animation: blink 0.8s infinite;
+}
+
+@keyframes zoomInOut {
+  0%, 100% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+.zoom-animation {
+  animation: zoomInOut 4s ease-in-out infinite;
+}
+
 
 @import "./styles/color.css";
 @import "./styles/components.css";

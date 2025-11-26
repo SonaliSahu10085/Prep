@@ -1,5 +1,6 @@
 import { images } from "../constants/images";
 import HeadPart from "./HeadPart";
+import Animate from "./Animate";
 
 function Label({ labels }: { labels: string[] }) {
     return (
@@ -30,19 +31,21 @@ function BottomPart({
     alignImg: "left" | "right";
 }) {
     return (
-        <div
-            className={`flex flex-col sm:gap-24 sm:items-center ${alignImg === "right" ? "sm:flex-row-reverse" : "sm:flex-row"
-                }`}
-        >
-            <img src={img} alt="" className={`h-96 ${alignImg === 'right' ? "slide-right" : "slide-left"} duration-75`} />
-            <div className="mt-6 sm:mt-0 text-center sm:text-start p-2">
-                <h3 className="text-secondary text-xl font-family-abril-fatface">
-                    {h3}
-                </h3>
-                <p className="my-4 leading-6">{p}</p>
-                <Label labels={labels} />
+        <Animate>
+            <div
+                className={`flex flex-col sm:gap-24 sm:items-center ${alignImg === "right" ? "sm:flex-row-reverse" : "sm:flex-row"
+                    }`}
+            >
+                <img src={img} alt="" className={`h-96 ${alignImg === 'right' ? "slide-right" : "slide-left"} duration-75`} />
+                <div className="mt-6 sm:mt-0 text-center sm:text-start p-2">
+                    <h3 className="text-cyan-600 text-xl font-family-abril-fatface">
+                        {h3}
+                    </h3>
+                    <p className="my-4 leading-6">{p}</p>
+                    <Label labels={labels} />
+                </div>
             </div>
-        </div>
+        </Animate>
     );
 }
 
@@ -77,6 +80,7 @@ export default function PrepPartner() {
 
     return (
         <section className="mx-4 sm:mx-20">
+
             <HeadPart h2={contents[0].h2!} p={contents[0].p} maxWh2="max-w-xl mx-auto" />
             <BottomPart
                 img={images.light.weServe}
