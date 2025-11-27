@@ -2,7 +2,7 @@ import { images } from "../constants/images";
 import HeadPart from "./HeadPart";
 import Animate from "./Animate";
 
-function Label({ labels }: { labels: string[] }) {
+function Label({ labels }) {
     return (
         <div className="flex flex-wrap gap-5 max-w-md justify-center sm:justify-start mx-auto sm:mx-0">
             {labels.map((text, idx) => (
@@ -23,12 +23,6 @@ function BottomPart({
     img,
     labels,
     alignImg,
-}: {
-    h3: string;
-    p: string;
-    img: string;
-    labels: string[];
-    alignImg: "left" | "right";
 }) {
     return (
         <Animate>
@@ -81,19 +75,19 @@ export default function PrepPartner() {
     return (
         <section className="mx-4 sm:mx-20">
 
-            <HeadPart h2={contents[0].h2!} p={contents[0].p} maxWh2="max-w-xl mx-auto" />
+            <HeadPart h2={contents[0].h2} p={contents[0].p} maxWh2="max-w-xl mx-auto" />
             <BottomPart
                 img={images.light.weServe}
-                h3={contents[1].h3!}
+                h3={contents[1].h3}
                 p={contents[1].p}
-                labels={contents[1].lables!}
+                labels={contents[1].lables}
                 alignImg="left"
             />
             <BottomPart
                 img={images.light.ourMission}
-                h3={contents[2].h3!}
+                h3={contents[2].h3}
                 p={contents[2].p}
-                labels={contents[2].lables!}
+                labels={contents[2].lables}
                 alignImg="right"
             />
         </section>

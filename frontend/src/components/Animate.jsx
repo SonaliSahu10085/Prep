@@ -1,24 +1,15 @@
 import { useRef, useEffect } from "react";
-import type { ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
-
-// Props type definition
-interface AnimateProps {
-    children: ReactNode;
-    direction?: "up" | "down" | "left" | "right";
-    distance?: number;
-    duration?: number;
-}
 
 export default function Animate({
     children,
     direction = "up",
     distance = 60,
     duration = 1,
-}: AnimateProps) {
+}) {
     const ref = useRef(null);
 
     useEffect(() => {
@@ -27,7 +18,7 @@ export default function Animate({
         const elem = ref.current;
 
         // Set initial x/y based on direction
-        let fromVars: { opacity: number; x?: number; y?: number } = { opacity: 0 };
+        let fromVars = { opacity: 0 };
         if (direction === "up") fromVars.y = distance;
         else if (direction === "down") fromVars.y = -distance;
         else if (direction === "left") fromVars.x = -distance;

@@ -1,6 +1,6 @@
 import TypingText from "./ui/shadcn-io/typing-text";
 
-export default function TypingEffect({ text }: { text: string }) {
+export default function TypingEffect({ text }) {
 
     return (
         <TypingText

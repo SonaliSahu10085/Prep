@@ -1,11 +1,5 @@
 import Animate from "./Animate";
-export default function HeadPart({ h2, p, maxWh2, maxWp }: {
-    h2: string;
-    p: string;
-    maxWh2?: string;
-    maxWp?: string;
-
-}) {
+export default function HeadPart({ h2, p, maxWh2, maxWp }) {
     return (
         <Animate>
             <div className="text-center">

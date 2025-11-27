@@ -1,11 +1,6 @@
-import { } from "../constants/images"
+// import { } from "../constants/images"
 
-function ResourceCard({ icon, img, h4, p }: {
-    icon: string;
-    img: string;
-    h4: string;
-    p: string;
-}) {
+function ResourceCard({ icon, img, h4, p }) {
     return (
         <div className="w-sm bg-gray-200">
 

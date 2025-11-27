@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Auth, Home , Contributors } from "./pages/index.ts";
+import { Auth, Home , Contributors } from "./pages/index.js";
 import "./index.css"
-import { images } from "./constants/images.ts";
-import { useStore } from "./constants/store.ts";
+import { images } from "./constants/images.js";
+import { useStore } from "./constants/store.js";
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <div
-        style={{ backgroundImage: `url(${images[theme as "light" | "dark"].bgImage})` }}
+        style={{ backgroundImage: `url(${images[theme].bgImage})` }}
         className="min-h-screen bg-cover bg-center"
       >
         <Routes>

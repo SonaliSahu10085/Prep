@@ -17,11 +17,8 @@ import {
   Paragraph,
 } from "./Basic";
 
-type FormProps = {
-  type: "admin" | "login" | "signup";
-};
 
-export default function Form({ type }: FormProps) {
+export default function Form({ type }) {
 
   const [inputType, setInputType] = useState('password');
 

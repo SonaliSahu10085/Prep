@@ -20,16 +20,8 @@ function ORWithLinesBothSide() {
   );
 }
 
-// InuptField Component
-type InputFieldProps = {
-  Icon1: React.ComponentType;
-  Icon2?: React.ComponentType;
-  placeholder: string;
-  setInputType?: (value: string) => void;
-  inputType: string;
-};
 
-function InputField({ Icon1, Icon2, placeholder, setInputType, inputType }: InputFieldProps) {
+function InputField({ Icon1, Icon2, placeholder, setInputType, inputType }) {
   const { theme } = useStore();
   const toggleType = () => {
     if (setInputType) {
@@ -38,7 +30,7 @@ function InputField({ Icon1, Icon2, placeholder, setInputType, inputType }: Inpu
   }
   return (
     <div className="my-3 border flex items-center gap-3 px-4 py-2 bg-[rgba(217,217,217,0.38)] rounded-md border-[rgb(129,193,205)] dark:text-gray-50">
-      <Icon1 {...({ className: "text-gray-600 cursor-pointer dark:text-gray-50" } as any)} />
+      <Icon1 className="text-gray-600 cursor-pointer dark:text-gray-50" />
       <div className="flex flex-1 items-center justify-between">
         <input
           placeholder={placeholder}
@@ -56,14 +48,7 @@ function InputField({ Icon1, Icon2, placeholder, setInputType, inputType }: Inpu
   );
 }
 
-// Button Component
-type ButtonProps = {
-  Icon?: React.ComponentType;
-  alignIcon?: "left" | "right";
-  label: string;
-};
-
-function Button({ Icon, alignIcon, label }: ButtonProps) {
+function Button({ Icon, alignIcon, label }) {
   return (
     <button
       type="submit"
@@ -73,20 +58,14 @@ function Button({ Icon, alignIcon, label }: ButtonProps) {
         } justify-center items-center w-full  py-2 rounded-md gap-2 my-3 font-medium border-[rgb(129,193,205)]`}
     >
       <span>{label}</span>
-      {Icon && <Icon {...({ className: "text-xl" } as any)} />}
+      {Icon && <Icon className="text-xl" />}
     </button>
   );
 }
 
 // Bottom Paragraph Component
 
-type ParagraphProp = {
-  text?: string | "";
-  highlightedText: string;
-  redirectTo?: string;
-};
-
-function Paragraph({ text, highlightedText, redirectTo }: ParagraphProp) {
+function Paragraph({ text, highlightedText, redirectTo }) {
   return (
     <p className="text-center text-xs italic">
       {text}
