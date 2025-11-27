@@ -42,11 +42,12 @@ export default function Form({ type }: FormProps) {
         {/* Admin Form */}
         {type === "admin" && (
           <>
-            <InputField Icon1={User} placeholder="Enter admin email address" />
+            <InputField Icon1={User} placeholder="Enter admin email address" inputType="text"/>
             <InputField
               Icon1={LockClose}
               Icon2={EyeClose}
               placeholder="Enter admin password"
+              inputType="password"
             />
             <Button label="Verify" />
           </>
@@ -86,12 +87,13 @@ export default function Form({ type }: FormProps) {
         {/* Signup Form */}
         {type === "signup" && (
           <>
-            <InputField Icon1={User} placeholder="Enter your full name" />
-            <InputField Icon1={Mail} placeholder="Enter your email address" />
+            <InputField Icon1={User} placeholder="Enter your full name" inputType="text" />
+            <InputField Icon1={Mail} placeholder="Enter your email address" inputType="text"/>
             <InputField
               Icon1={LockClose}
               Icon2={EyeClose}
               placeholder="Enter a strong password"
+              inputType="password"
             />
 
             <Button label="Create an account" />

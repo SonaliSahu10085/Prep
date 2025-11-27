@@ -1,3 +1,4 @@
+import { useStore } from "@/constants/store";
 import { Link } from "react-router-dom";
 
 function Loading() {
@@ -29,7 +30,7 @@ type InputFieldProps = {
 };
 
 function InputField({ Icon1, Icon2, placeholder, setInputType, inputType }: InputFieldProps) {
-
+  const { theme } = useStore();
   const toggleType = () => {
     if (setInputType) {
       setInputType(inputType === "password" ? "text" : "password");
@@ -42,7 +43,7 @@ function InputField({ Icon1, Icon2, placeholder, setInputType, inputType }: Inpu
         <input
           placeholder={placeholder}
           type={inputType}
-          className="flex-1 bg-transparent focus:outline-none text-gray-700 dark:text-gray-50"
+          className={`flex-1 bg-transparent focus:outline-none ${theme === 'dark'? "text-gray-50" :"text-gray-700"}`}
         />
         {Icon2 && (
           <Icon2
