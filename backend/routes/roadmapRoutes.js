@@ -8,8 +8,8 @@ router.get("/", authVerify, roadmapController.getAllRoadmaps);
 router.get("/:year", authVerify, roadmapController.getRoadmapByYear);
 
 // Only for admin
-router.post("/", roadmapController.createRoadmap);
-router.put("/:id", roadmapController.updateRoadmap);
-router.delete("/:id", roadmapController.deleteRoadmap);
+router.post("/", authVerify, roadmapController.createRoadmap);
+router.put("/:id", authVerify, roadmapController.updateRoadmap);
+router.delete("/:id", authVerify, roadmapController.deleteRoadmap);
 
 module.exports = router;
