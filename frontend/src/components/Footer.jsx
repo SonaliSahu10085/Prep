@@ -54,8 +54,8 @@ export default function Footer() {
                             <h5 className="text-secondary text-md font-family-abril-fatface">Quick Links</h5>
                             <ul className="flex flex-col gap-3">
                                 <Link to={'/contributors#top'} className="transition-transform transform hover:underline">Our Contributors</Link>
-                                <Link to={"/privacy-policy"} className="transition-transform transform hover:underline">Privacy Policy</Link>
-                                <Link to={'/contact-us'} className="transition-transform transform hover:underline">Contact Us</Link>
+                                <Link to={"/privacy_policy"} className="transition-transform transform hover:underline">Privacy Policy</Link>
+                                <Link to={'/contact_us'} className="transition-transform transform hover:underline">Contact Us</Link>
                             </ul>
                         </div>
 

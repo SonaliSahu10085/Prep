@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Auth, Home , Contributors } from "./pages/index.js";
+import { Auth, Home , Contributors, PolicyPage } from "./pages/index.js";
 import "./index.css"
 import { images } from "./constants/images.js";
 import { useStore } from "./constants/store.js";
@@ -19,6 +19,8 @@ function App() {
           <Route path="/signup" element={<Auth type="signup" />} />
           <Route path="/admin/login" element={<Auth type="admin" />} />
           <Route path="/contributors" element={<Contributors />} />
+          <Route path="/privacy_policy" element={<PolicyPage />} />
+
         </Routes>
       </div>
     </BrowserRouter>
