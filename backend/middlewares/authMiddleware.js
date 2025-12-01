@@ -27,8 +27,9 @@ const authVerify = async (req, res, next) => {
 const adminVerify = async (req, res, next) => {
     try {
         const { role } = req.user;
+        console.log(req.user.id);
         if (role !== "admin") {
-            return res.status(401).json({ message: "Not authorized" });
+            return res.status(401).json({ message: "only admin can create roadmap" });
         }
         next();
     } catch (error) {

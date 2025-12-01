@@ -60,7 +60,7 @@ const userLogin = async (req, res) => {
         }
         
         // Create JWT token
-        const token = jwt.sign({ id: loginUser._id }, process.env.JWT_SECRET, { expiresIn: "7d" });
+        const token = jwt.sign({ id: loginUser._id, role: loginUser.role }, process.env.JWT_SECRET, { expiresIn: "7d" });
     
         res.status(200).json({ message: "Login successful", user: loginUser, Token: token });
     } catch (error) {
@@ -72,7 +72,6 @@ const userLogin = async (req, res) => {
 const getUserProfile = async (req, res) => {
     try {
         const user = req.user;
-        console.log(user);
         
         if (!user) {
             return res.status(404).json({ error: "User not found" });
