@@ -156,6 +156,22 @@ export default function PolicyPage() {
               </ul>
             </div>
           </Animate>
+
+          <Animate>
+            <div
+              className={`p-4 sm:p-8 space-y-4 border border-gray-400 rounded-lg ${
+                theme === "dark" ? "bg-black/60" : "bg-white/60"
+              }`}
+            >
+              <h3 className="text-primary text-xl font-family-abril-fatface">
+                Contact Us
+              </h3>
+              <p className="leading-6">
+                If you have any questions about this Privacy Policy, please
+                reach out at <span className="text-primary font-bold">kmpm.campusprep@gmail.com</span>
+              </p>
+            </div>
+          </Animate>
         </div>
       </section>
       <Footer />
