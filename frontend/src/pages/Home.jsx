@@ -1,5 +1,12 @@
-import { Navbar, Body, HeroSection, PrepPartner, PlaceJourney, ResourcesContainer, Footer } from "../components";
-
+import {
+  Navbar,
+  Body,
+  HeroSection,
+  PrepPartner,
+  PlaceJourney,
+  ResourcesContainer,
+  Footer,
+} from "../components";
 
 const Home = () => {
   return (
@@ -7,12 +14,12 @@ const Home = () => {
       <Navbar />
       <HeroSection />
       <PrepPartner />
-      <PlaceJourney />
+
       <ResourcesContainer />
-      <Footer/>
-      
+      <PlaceJourney />
+      <Footer />
     </div>
-  )
-}
+  );
+};
 
 export default Home;

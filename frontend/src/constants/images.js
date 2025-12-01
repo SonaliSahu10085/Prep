@@ -7,12 +7,16 @@ export const images = {
     ajay: `${CLOUDINARY_BASE_URL}/v1764227045/ajay_xllons.png`,
     sonali: `${CLOUDINARY_BASE_URL}/v1764227044/sonali_r436dw.png`,
     appqrcode: `${CLOUDINARY_BASE_URL}/v1763033827/qrcode_dzn7h0.png`,
+    roadmaps: `${CLOUDINARY_BASE_URL}/v1764434788/roadmaps_auiia4.png`,
+    resources: `${CLOUDINARY_BASE_URL}/v1764434788/resources_p32tfz.png`,
+    internshipOppor: `${CLOUDINARY_BASE_URL}/v1764434788/internship_jobOppr_ph5h7w.png`,
+    aiMockInterview: `${CLOUDINARY_BASE_URL}/v1764434787/ai_mock_interview_krskvj.png`,
   },
   light: {
     bgImage: `${CLOUDINARY_BASE_URL}/v1761397617/BG_Light_qgtgt5.png`,
     adminLogin: `${CLOUDINARY_BASE_URL}/v1761397617/admin_portal_light_tvpycn.png`,
     ourMission: `${CLOUDINARY_BASE_URL}/v1762683800/OurMission_llzxml.png`,
-    weServe: `${CLOUDINARY_BASE_URL}/v1762683800/people_group_dxwpq1.png`
+    weServe: `${CLOUDINARY_BASE_URL}/v1762683800/people_group_dxwpq1.png`,
   },
   dark: {
     bgImage: `${CLOUDINARY_BASE_URL}/v1761562643/bgDark_fb95gi.png`,

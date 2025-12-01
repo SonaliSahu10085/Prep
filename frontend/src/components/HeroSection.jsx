@@ -7,7 +7,7 @@ export function RedBtn({ text }) {
   return (
     <button
       type="button"
-      className="flex items-center gap-2 bg-red-400 px-5 py-2 rounded-md text-white font-medium border border-gray-300 shadow-md shadow-gray-400 zoom-animation"
+      className="flex items-center gap-2 bg-orange-500 px-5 py-2 rounded-md text-white border border-gray-300 shadow-md shadow-gray-400 zoom-animation font-bold"
     >
       <span>{text}</span> <RightArrow />
     </button>
@@ -16,9 +16,9 @@ export function RedBtn({ text }) {
 
 export function HeroSection() {
   return (
-    <section className="mx-4 sm:mx-20 px-2 py-20 flex flex-col sm:flex-row">
+    <section className="mx-4 sm:mx-20 px-2 flex flex-col sm:flex-row my-14">
       <div className="flex-1 sm:my-auto text-center sm:text-start">
-        <h1 className="text-brand-gradient text-5xl sm:text-7xl font-family-abril-fatface pb-4">
+        <h1 className="text-brand-gradient text-5xl sm:text-6xl font-family-abril-fatface pb-4">
           <span className="bg-red-400 rounded-4xl text-white/90 px-4 py-1 leading-28 sm:text-6xl text-4xl italic">
             Stop
           </span>
@@ -33,15 +33,14 @@ export function HeroSection() {
         <div className="flex mt-5">
           <button
             type="button"
-            className="flex items-center gap-2 font-medium border px-5 py-2 rounded-md shadow-md shadow-gray-300"
+            className="flex items-center gap-2 font-medium px-10 py-2 rounded-sm shadow-sm bg-orange-500 text-white hover:bg-white hover:text-orange-500 transform transition-transform cursor-pointer"
           >
-            <Play />
-            <span>Watch Demo</span>
+            <span className="font-medium">Try For Free</span>
           </button>
 
           <button
             type="button"
-            className="flex items-center gap-2 font-medium border border-red-300 px-5 py-2 rounded-md ms-5 shadow-md"
+            className="flex items-center gap-2 font-medium border border-orange-500 px-5 py-2 rounded-md ms-5 shadow-md hover:bg-white hover:text-black"
           >
             <Play />
             <span className="">Watch Demo</span>
@@ -49,13 +48,13 @@ export function HeroSection() {
         </div>
       </div>
 
-      <Animate direction="right">
+      {/* <Animate direction="right"> */}
         <img
           src={images.default.heroSection}
           alt="Hero Section"
-          className="h-96 flex-1 mt-8 sm:mt-0 zoom-animation"
+          className="h-96 flex-1 mt-8 sm:mt-0 "
         />
-      </Animate>
+      {/* </Animate> */}
     </section>
   );
 }
